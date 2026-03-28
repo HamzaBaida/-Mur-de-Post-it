@@ -1,5 +1,5 @@
 # 📝 Mur de Post-it 2.0
-(screenshots/home.png)
+(screenshots/imag.png)
 
 ## 👤 Auteur
 
