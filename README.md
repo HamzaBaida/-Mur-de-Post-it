@@ -94,14 +94,6 @@ post-it_app/
 
 ---
 
-## ✨ Améliorations possibles
-
-* Ajouter un système de commentaires
-* Ajouter un système d’authentification
-* Améliorer le design avec animations
-
----
-
 ## ✅ Conclusion
 
 Ce projet démontre la mise en place complète d’une application web full-stack avec une architecture REST et une interface interactive.
