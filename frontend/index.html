@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mur de Notes</title>
+
+    <style>
+        body {
+            font-family: "Roboto Light";
+            background: #f4f4f9;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 540px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 520px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+           opacity: 0.6;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .post-it {
+            background: #ffeb3b;
+            padding: 15px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .post-it:nth-child(even) {
+            transform: rotate(1deg);
+            background: #fff176;
+        }
+
+        .post-it strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            width: 26px;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .author {
+            display: inline-block;
+            background: #ffffff;
+            color: #191919;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .content {
+            font-size: 14px;
+            color: #222;
+            line-height: 1.4;
+        }
+        .update_button {
+                background: #2196F3;
+                position: absolute;
+                width: 40px;
+                top: 5px;
+                right: 40px;
+                color: white;
+                border: none;
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 4px;
+        }
+        small {
+            display: block;
+            margin-top: 8px;
+            color: #555;
+            font-size: 12px;
+        }
+        .colors {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .color-circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-circle.active {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Mur de Notes</h1>
+
+<div class="form-container">
+    <input type="text" id="auteur" placeholder="Votre nom">
+    <textarea id="message" placeholder="Votre message..."></textarea>
+    <div class="colors">
+        <div class="color-circle" style="background:#ffeb3b" onclick="selectColor('#ffeb3b')"></div>
+        <div class="color-circle" style="background:#81d4fa" onclick="selectColor('#81d4fa')"></div>
+        <div class="color-circle" style="background:#a5d6a7" onclick="selectColor('#a5d6a7')"></div>
+        <div class="color-circle" style="background:#f8bbd0" onclick="selectColor('#f8bbd0')"></div>
+    </div>
+    <button onclick="ajouterNote()">Ajouter Note</button>
+</div>
+
+<div class="grid" id="mur"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
